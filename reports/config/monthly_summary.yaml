@@ -1,0 +1,28 @@
+name: "Monthly Inventory Summary"
+schedule: "every day at 06:00"
+format: "pdf"
+
+source:
+  type: "csv"
+  path: "data/inventory.csv"
+  separator: ","
+
+transform:
+  - type: "filter"
+    column: "quantity"
+    op: "gt"
+    value: 0
+  - type: "sort"
+    by: "quantity"
+    ascending: true
+  - type: "add_column"
+    name: "stock_value"
+    formula: "quantity * unit_price"
+
+delivery:
+  recipients:
+    - "warehouse@company.com"
+    - "ops@company.com"
+  subject: "Monthly Inventory Summary — {date_range}"
+  body: "Please find the monthly inventory summary attached."
+  attach_file: true

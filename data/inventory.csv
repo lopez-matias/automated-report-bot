@@ -1,0 +1,16 @@
+sku,product_name,category,quantity,unit_price,warehouse,reorder_point
+SKU001,Wireless Keyboard,Electronics,150,29.99,WH-A,50
+SKU002,USB-C Hub,Electronics,42,49.99,WH-A,30
+SKU003,Office Chair,Furniture,8,249.00,WH-B,10
+SKU004,Standing Desk,Furniture,3,599.00,WH-B,5
+SKU005,Notebook A5,Stationery,500,2.49,WH-A,100
+SKU006,Ballpoint Pens (12pk),Stationery,300,4.99,WH-A,100
+SKU007,Monitor 27in,Electronics,25,379.00,WH-A,10
+SKU008,Webcam HD,Electronics,60,79.99,WH-A,20
+SKU009,Desk Lamp,Furniture,90,34.99,WH-B,25
+SKU010,Laptop Stand,Electronics,110,44.99,WH-A,40
+SKU011,Mouse Pad XL,Electronics,200,12.99,WH-A,60
+SKU012,Filing Cabinet,Furniture,12,189.00,WH-B,5
+SKU013,Sticky Notes,Stationery,1000,1.29,WH-A,200
+SKU014,Whiteboard,Furniture,7,129.00,WH-B,5
+SKU015,Cable Organizer,Electronics,85,9.99,WH-A,30

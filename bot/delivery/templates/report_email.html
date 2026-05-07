@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0; padding: 0; background: #f4f6f8; }
+    .wrapper { max-width: 640px; margin: 32px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .header  { background: #1F3864; padding: 28px 32px; color: #fff; }
+    .header h1 { margin: 0; font-size: 22px; font-weight: bold; }
+    .header p  { margin: 6px 0 0; font-size: 13px; color: #aac4e6; }
+    .body    { padding: 28px 32px; }
+    .body p  { font-size: 14px; line-height: 1.6; }
+    .kpi-row { display: flex; gap: 16px; margin: 20px 0; }
+    .kpi-box { flex: 1; background: #f0f4ff; border-left: 4px solid #1F3864; border-radius: 4px; padding: 14px 16px; }
+    .kpi-box .val { font-size: 20px; font-weight: bold; color: #1F3864; }
+    .kpi-box .lbl { font-size: 11px; color: #888; margin-top: 4px; }
+    .footer  { background: #f4f6f8; padding: 16px 32px; font-size: 11px; color: #aaa; text-align: center; border-top: 1px solid #e8eaf0; }
+    a { color: #1F3864; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>{{report_name}}</h1>
+      <p>{{date_range}}</p>
+    </div>
+    <div class="body">
+      <p>Hi team,</p>
+      <p>{{body}}</p>
+      <p>The report file is attached to this email.</p>
+    </div>
+    <div class="footer">
+      This report is generated automatically ({{schedule}}).
+      Please do not reply to this email.
+    </div>
+  </div>
+</body>
+</html>

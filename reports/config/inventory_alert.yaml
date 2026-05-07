@@ -1,0 +1,25 @@
+name: "Exchange Rate Report"
+schedule: "every friday at 17:30"
+format: "excel"
+chart_type: "line"
+
+source:
+  type: "api"
+  url: "https://open.er-api.com/v6/latest/USD"
+  data_key: "rates"
+  paginate: false
+
+transform:
+  - type: "rename"
+    mapping:
+      "index": "currency"
+  - type: "sort"
+    by: "USD"
+    ascending: false
+
+delivery:
+  recipients:
+    - "finance@company.com"
+  subject: "Weekly Exchange Rate Report — {date_range}"
+  body: "Please find attached this week's exchange rate report."
+  attach_file: true
