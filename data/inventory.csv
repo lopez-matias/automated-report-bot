@@ -1,0 +1,16 @@
+sku,product_name,category,quantity,reorder_level,unit_cost,supplier
+SKU-001,Wireless Headphones,Electronics,145,50,89.99,AudioCorp
+SKU-002,USB-C Hub,Electronics,230,100,34.50,TechSupply
+SKU-003,Ergonomic Chair,Furniture,32,10,299.00,OfficeWorld
+SKU-004,Standing Desk,Furniture,18,5,549.99,OfficeWorld
+SKU-005,Mechanical Keyboard,Electronics,87,40,129.00,KeyMasters
+SKU-006,Monitor 27",Electronics,55,20,379.00,ScreenTech
+SKU-007,Webcam HD,Electronics,112,60,79.99,VideoGear
+SKU-008,Desk Lamp,Accessories,200,80,24.99,LightCo
+SKU-009,Notebook A4,Stationery,500,200,3.49,PaperWorld
+SKU-010,Ballpoint Pens x10,Stationery,350,150,6.99,PaperWorld
+SKU-011,Whiteboard,Furniture,14,5,89.00,OfficeWorld
+SKU-012,Cable Organizer,Accessories,178,70,12.99,TechSupply
+SKU-013,Mousepad XL,Accessories,95,40,19.99,KeyMasters
+SKU-014,Laptop Stand,Electronics,63,25,49.99,TechSupply
+SKU-015,Power Strip,Accessories,140,60,28.99,ElectroCo

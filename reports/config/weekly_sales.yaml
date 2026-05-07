@@ -1,0 +1,33 @@
+name: "Weekly Sales Report"
+schedule: "every monday at 08:00"
+format: "excel"
+
+source:
+  type: "postgres"
+  query: |
+    SELECT
+      DATE_TRUNC('day', order_date)::date AS date,
+      region,
+      SUM(total) AS revenue,
+      COUNT(*) AS orders
+    FROM orders
+    WHERE order_date >= NOW() - INTERVAL '7 days'
+      AND status = 'completed'
+    GROUP BY 1, 2
+    ORDER BY 1, 2
+
+transform:
+  - type: "add_column"
+    name: "avg_order_value"
+    formula: "revenue / orders"
+  - type: "sort"
+    by: "revenue"
+    ascending: false
+
+delivery:
+  recipients:
+    - "ceo@company.com"
+    - "sales@company.com"
+  subject: "Weekly Sales Report — {date_range}"
+  body: "Please find attached the weekly sales report for {date_range}."
+  attach_file: true

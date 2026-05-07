@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: Calibri, Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+  .container { max-width: 600px; margin: 30px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .header { background: #1F3864; color: #fff; padding: 24px 32px; }
+  .header h1 { margin: 0; font-size: 20px; }
+  .header p { margin: 6px 0 0; font-size: 13px; opacity: 0.85; }
+  .body { padding: 28px 32px; }
+  .body p { color: #444; line-height: 1.6; }
+  .kpi-grid { display: flex; gap: 16px; margin: 20px 0; flex-wrap: wrap; }
+  .kpi-box { flex: 1; min-width: 130px; background: #f0f4fb; border-left: 4px solid #1F3864; border-radius: 4px; padding: 14px 16px; }
+  .kpi-box .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-box .value { font-size: 22px; font-weight: bold; color: #1F3864; margin-top: 4px; }
+  .footer { background: #f9f9f9; border-top: 1px solid #e8e8e8; padding: 16px 32px; font-size: 11px; color: #aaa; }
+  .attach-note { background: #fff8e1; border: 1px solid #ffe082; border-radius: 4px; padding: 10px 14px; font-size: 13px; color: #795548; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>{{ report_name }}</h1>
+    <p>{{ date_range }}</p>
+  </div>
+  <div class="body">
+    <p>Hi team,</p>
+    <p>{{ body_text }}</p>
+
+    {% if kpis %}
+    <div class="kpi-grid">
+      {% for kpi in kpis %}
+      <div class="kpi-box">
+        <div class="label">{{ kpi.label }}</div>
+        <div class="value">{{ kpi.value }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if attach_file %}
+    <div class="attach-note">
+      📎 Report attached as <strong>{{ formats }}</strong>
+    </div>
+    {% endif %}
+
+    <p style="margin-top:24px; color:#888; font-size:12px;">
+      This report is generated automatically every {{ schedule_desc }}.
+    </p>
+  </div>
+  <div class="footer">
+    Report Bot &bull; Generated {{ generated_at }}
+  </div>
+</div>
+</body>
+</html>
